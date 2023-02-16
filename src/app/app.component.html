@@ -1,0 +1,23 @@
+
+<button (click)="all()">all</button>
+<button (click)="semester()">semester</button>
+<button (click)="camp()">camp</button>
+<button (click)="product()">product</button>
+
+
+<app-all-activity class="all" *ngIf="a" [message]="'Parent'" ></app-all-activity>
+<app-semester class="sem" *ngIf="se" (child)="messageOfChild($event)">{{hey}}</app-semester>
+<app-camp class="camp" *ngIf="ca" ></app-camp>
+<app-product class="pro" *ngIf="pr"></app-product>
+
+
+<p>home works!</p>
+
+
+<div [hidden]="captcha">
+    <p>Hello potential human...</p>
+    <re-captcha (resolved)="resolved($event)" siteKey="6LezIoYkAAAAAKkxMDZIH6k5o0Axnjk-PZU2YHML"></re-captcha>
+</div>
+<div [hidden]="!captcha">
+    <p>{{ email }}</p>
+</div>
